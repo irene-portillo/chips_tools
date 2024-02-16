@@ -10,7 +10,7 @@ def make_game_library_from_json( json_data ):
     print('code running...')
 
     #Loop through the json_data
-    for game in json_data: # shouldn't this be looping through test_data since it holds the games?
+    for game in json_data["Games"]: # shouldn't this be looping through test_data since it holds the games?
         #Create a new Game object from the json_data by reading
         print(game)
 

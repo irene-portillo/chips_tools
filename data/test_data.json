@@ -3,37 +3,34 @@
 	[
 
 		{ 
-		"platform": [
+		"platform": 
 					{
 						"launch year": 1989,
 						"name": "Atari Lynx"			
-					}
-					],
-		"title": "Chip’s Challenge",
+					},
+		"title": "Chip's Challenge",
 		"year": 1989
 		}, 
 
 		
 		{
-		"platform": [
+		"platform": 
 					{
 						"launch year": 2003,
 						"name": "Steam"			
-					}
-					],
-		"title": "Chip’s Challenge 2",
+					},
+		"title": "Chip's Challenge 2",
 		"year": 2015	
 		},
 
 		
 		{
-			"platform": [
+			"platform": 
 						{
 							"launch year": 2023,
 							"name": "Playstation"			
-						}
-						],
-			"title": "“Chip’s Challenge Revamped”",
+						},
+			"title": "Chip's Challenge Revamped",
 			"year": 2024		
 		}
 	]
