@@ -1,7 +1,7 @@
 {
     "Levels": 
     [
-        {
+        {       
             "level_num": 1,
             "time_lim": 300,
             "chip_num": 4,
@@ -81,7 +81,7 @@
                 "title": "Chips Level JSON [Assignment #2 JSON /LVL 1?]",
                 "password": [216, 208, 193, 223],
                 "hint": "HINT: Collect all the chips, then go through exit!",
-                "moving_objs": "moving objs/ monster HERE"
+                "moving_objs": "moving objs/ monster HERE later []"
             }
 
 
@@ -167,7 +167,7 @@
                 "title": "Chips Level JSON [Assignment #2 JSON /LVL 2?]",
                 "password": [209, 195, 202, 223],
                 "hint": "HINT: Watch out, enemies are circling",
-                "moving_objs": "moving objs/ monster HERE"
+                "moving_objs": "moving objs/ monster HERE later []"
             }
 
 

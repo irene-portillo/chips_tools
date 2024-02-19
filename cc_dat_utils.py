@@ -289,4 +289,4 @@ def write_cc_level_pack_to_dat(cc_dat, dat_file):
             write_level_to_dat(level, writer)
 
 ## PT 1: Loading data for assign. 1
-print( make_cc_level_pack_from_dat('data/pfgd_test.dat') )
+# print( make_cc_level_pack_from_dat('data/pfgd_test.dat') )
