@@ -50,38 +50,53 @@ def make_level_library_from_json( json_data ):
     #Initialize a new LevelLibrary 
     level_library = cc_classes.CCLevelPack()
 
-    #Loop through the json_data
-    for level in json_data["Levels"]: 
-        #Initialize a new level obj
-        newLevel = cc_classes.CCLevel()
-        #Create a new level object from the json_data by reading
-        newLevel.level_number = level["level_num"]
-        newLevel.time = level["time_lim"]
-        newLevel.num_chips = level["chip_num"]
-        newLevel.upper_layer = level["upper_layer"]
-        newLevel.lower_layer = level["lower_layer"]
-        make_optional_fields(level, newLevel)
-        #Add that level object to the level_library
-        level_library.add_level(newLevel)
+    print('in function ummm')
+    print(json_data)
+    print('uhhLevels')
+    for overallLevel in json_data:
+        #Loop through the json_data
+        for level in overallLevel["Levels"]: 
+        # for level in json_data["Levels"]:
+            #Initialize a new level obj
+            newLevel = cc_classes.CCLevel()
+            #Create a new level object from the json_data by reading
+            newLevel.level_number = level["level_num"]
+            newLevel.time = level["time_lim"]
+            newLevel.num_chips = level["chip_num"]
+            newLevel.upper_layer = level["upper_layer"]
+            newLevel.lower_layer = level["lower_layer"]
+            make_optional_fields(level, newLevel)
+            #Add that level object to the level_library
+            level_library.add_level(newLevel)
 
-        print(f'optional fields:  {newLevel.optional_fields}')
+            print(f'optional fields:  {newLevel.optional_fields}')
     # print(level_library)
     return level_library #Return -> Converted JSON data to CCLevelPack 
 
 
 #Assign file
-input_json_file = "data/own_levels.json"
+# input_json_file = "data/own_levels.json" # assignment pt 3
+# input_json_file = "data/A3_Test.json" # the only thing i need to fix, is the monsterObjs []
+# input_json_file = "data/all_3_files_test.json" # the only thing i need to fix, is the monsterObjs []
+input_json_file = "data/iportill_cc_level_pack.json" # the only thing i need to fix, is the monsterObjs []
+
 
 #Open the JSON file
 with open(input_json_file, "r") as reader:
     #load the JSON data and store it in the variable family_json_data
     json_data = json.load(reader)
+
     levelLibrary = make_level_library_from_json(json_data)
     print(levelLibrary)
     print('Done loading json files! Created levelLibrary')
 
     # make ccLevelPack into a dat file
-    datFile = cc_dat_utils.write_cc_level_pack_to_dat(levelLibrary, "own_levels.dat")
+    # datFile = cc_dat_utils.write_cc_level_pack_to_dat(levelLibrary, "own_levels.dat")
+    # datFile = cc_dat_utils.write_cc_level_pack_to_dat(levelLibrary, "A3_Test.dat")
+    # datFile = cc_dat_utils.write_cc_level_pack_to_dat(levelLibrary, "all_3_files_test.dat")
+    datFile = cc_dat_utils.write_cc_level_pack_to_dat(levelLibrary, "iportill_cc_level_pack.dat")
+
+
     print('created dat file')
 
     #Use cc_dat_utils.make_cc_level_pack_from_dat() to load the file specified by input_dat_file - Used from pt1
