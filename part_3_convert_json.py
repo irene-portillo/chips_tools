@@ -53,23 +53,23 @@ def make_level_library_from_json( json_data ):
     print('in function ummm')
     print(json_data)
     print('uhhLevels')
-    for overallLevel in json_data:
-        #Loop through the json_data
-        for level in overallLevel["Levels"]: 
-        # for level in json_data["Levels"]:
-            #Initialize a new level obj
-            newLevel = cc_classes.CCLevel()
-            #Create a new level object from the json_data by reading
-            newLevel.level_number = level["level_num"]
-            newLevel.time = level["time_lim"]
-            newLevel.num_chips = level["chip_num"]
-            newLevel.upper_layer = level["upper_layer"]
-            newLevel.lower_layer = level["lower_layer"]
-            make_optional_fields(level, newLevel)
-            #Add that level object to the level_library
-            level_library.add_level(newLevel)
+    # for overallLevel in json_data:
+    #     #Loop through the json_data
+    #     for level in overallLevel["Levels"]: 
+    for level in json_data["Levels"]:
+        #Initialize a new level obj
+        newLevel = cc_classes.CCLevel()
+        #Create a new level object from the json_data by reading
+        newLevel.level_number = level["level_num"]
+        newLevel.time = level["time_lim"]
+        newLevel.num_chips = level["chip_num"]
+        newLevel.upper_layer = level["upper_layer"]
+        newLevel.lower_layer = level["lower_layer"]
+        make_optional_fields(level, newLevel)
+        #Add that level object to the level_library
+        level_library.add_level(newLevel)
 
-            print(f'optional fields:  {newLevel.optional_fields}')
+        print(f'optional fields:  {newLevel.optional_fields}')
     # print(level_library)
     return level_library #Return -> Converted JSON data to CCLevelPack 
 
